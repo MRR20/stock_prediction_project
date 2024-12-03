@@ -34,7 +34,7 @@ def create_streamlit_app():
     if submit_button:
         # Call the prediction function and get the predicted stock price
         predicted_price = predict_stock_price(stock_symbol)
-        
+
         if predicted_price is not None:
             # Fetch historical stock data for the last month (1mo)
             stock_data = yf.download(stock_symbol, period=time_period, interval='1d')  # Fetch data for the past month
@@ -49,10 +49,10 @@ def create_streamlit_app():
 
             # Create a plot using matplotlib for both historical and predicted data
             fig, ax = plt.subplots(figsize=(10, 5))
-            
+
             # Plot historical data
             ax.plot(stock_data.index, stock_data['Close'], label='Historical Stock Price', color='blue', linewidth=2)
-            
+
             # Add predicted stock price as a new point (next day's prediction)
             prediction_date = stock_data.index[-1] + pd.Timedelta(days=1)  # Calculate the next date
             ax.scatter(prediction_date, predicted_price, color='red', label='Predicted Stock Price', zorder=5)
