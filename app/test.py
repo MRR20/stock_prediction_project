@@ -17,10 +17,10 @@ analyzer = SentimentIntensityAnalyzer()
 def predict_stock_price(stock_symbol: str, num_days: int = 7):
     # Get the directory of the script
     script_dir = os.path.dirname(os.path.abspath(__file__))  # Directory of the script
-    
+
     # Construct the model file path using the script directory
     model_file_path = os.path.join(script_dir, "../model/stock_sentiment_model.h5")  # Path to the model (note the .h5 extension)
-    
+
     # Step 1: Get the latest stock data
     stock_data = yf.download(stock_symbol, period='1d', interval='1d')  # Get the most recent stock data
     stock_data = stock_data[['Close']]  # Use only the 'Close' price for simplicity
