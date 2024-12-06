@@ -1,3 +1,6 @@
+from bs4 import BeautifulSoup  # Import BeautifulSoup for HTML parsing
+
+# Existing imports
 import numpy as np
 import pandas as pd
 import yfinance as yf
@@ -55,7 +58,10 @@ def predict_stock_price(stock_symbol: str, num_days: int = 7):
             for article in results:
                 # Check if the 'fields' and 'body' keys exist
                 if "fields" in article and "body" in article["fields"]:
-                    news_data.append({'date': date_str, 'content': article["fields"]["body"]})
+                    # Use BeautifulSoup to clean the content
+                    raw_content = article["fields"]["body"]
+                    clean_content = BeautifulSoup(raw_content, "html.parser").get_text()  # Remove HTML tags
+                    news_data.append({'date': date_str, 'content': clean_content})
         else:
             print(f"Failed to fetch data for {date_str}: {response.status_code}")
 
