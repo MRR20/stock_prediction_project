@@ -67,7 +67,7 @@ def predict_stock_price(stock_symbol: str, num_days: int = 7):
 
         current_date += pd.Timedelta(days=1)
 
-    # Analyze sentiment
+    # Analyze sentiment (VADER Lexicon)
     if news_data:
         news_df = pd.DataFrame(news_data)
         news_df['sentiment'] = news_df['content'].apply(lambda x: analyzer.polarity_scores(x)['compound'])
