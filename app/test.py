@@ -25,7 +25,7 @@ def predict_stock_price(stock_symbol: str, num_days: int = 7):
     model_file_path = os.path.join(script_dir, "../model/stock_sentiment_model.h5")  # Path to the model (note the .h5 extension)
 
     # Step 1: Get the latest stock data
-    stock_data = yf.download(stock_symbol, period='1d', interval='1d')  # Get the most recent stock data
+    stock_data = yf.download(stock_symbol, period='5d', interval='1d')  # Get the most recent stock data
     stock_data = stock_data[['Close']]  # Use only the 'Close' price for simplicity
 
     # Step 2: Get the latest news sentiment data
