@@ -1,0 +1,6 @@
+tensorflow
+nltk
+scikit-learn
+matplotlib
+numpy
+streamlit
