@@ -107,6 +107,4 @@ def predict_stock_price(stock_symbol: str, num_days: int = 7):
         print("Error: Stock or sentiment data is missing!")
         return None
 
-# Example usage:
-# predicted_price = predict_stock_price('AAPL')
-# print(f"Predicted stock price for the next day: ${predicted_price:.2f}")
+
