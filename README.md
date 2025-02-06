@@ -1,4 +1,4 @@
-**Stock Price Prediction using News Sentiment and Historical Data** 
+**Stock Price Prediction using News Sentiment and Historical Data** (ANALYSING THE INFLUENCE OF NEWS SENTIMENT ON STOCK PRICES)
 
 This project aims to predict future stock (of only next day, and inter day prediction) using past News data and past Stock price trends. This project uses LSTM (Long Short-Term Memory) as prediction model, where it takes input of News Sentiment Score and Stock Closing price.
 
